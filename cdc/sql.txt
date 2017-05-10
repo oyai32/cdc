@@ -1,0 +1,167 @@
+CREATE TABLE `family` (
+  `f_id` int(11) NOT NULL AUTO_INCREMENT,
+  `hzxm` varchar(20) NOT NULL,
+  `sfzh` varchar(20) DEFAULT NULL,
+  `tel` varchar(20) DEFAULT NULL,
+  `birth` varchar(20) DEFAULT NULL,
+  `num` int(11) DEFAULT NULL,
+  `shouru` varchar(11) DEFAULT NULL,
+  `cz` varchar(20) DEFAULT NULL,
+  `address` varchar(50) DEFAULT NULL,
+  `db` char(2) DEFAULT NULL,
+  `create_time` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`f_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `gysuggest` (
+  `p_id` int(11) NOT NULL,
+  `suggest` varchar(500) DEFAULT NULL,
+  `create_time` varchar(50) DEFAULT NULL,
+  `g_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`g_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `maintenance` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `u_id` int(11) NOT NULL,
+  `create_time` varchar(20) NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `content` varchar(500) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `manager` (
+  `m_id` int(11) NOT NULL AUTO_INCREMENT,
+  `p_id` int(11) NOT NULL,
+  `visit_time` varchar(20) DEFAULT NULL,
+  `text` varchar(500) DEFAULT NULL,
+  `zz` varchar(50) DEFAULT NULL,
+  `mb` char(2) DEFAULT NULL,
+  `update_time` varchar(20) DEFAULT NULL,
+  `sftext` varchar(500) DEFAULT NULL,
+  PRIMARY KEY (`m_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `person` (
+  `p_id` int(11) NOT NULL,
+  `p_name` varchar(20) NOT NULL,
+  `p_sex` char(2) NOT NULL,
+  `p_birth` varchar(20) DEFAULT NULL,
+  `sfzh` varchar(20) DEFAULT NULL,
+  `jzzk` varchar(20) DEFAULT NULL,
+  `yhzgx` varchar(20) DEFAULT NULL,
+  `cz` varchar(20) DEFAULT NULL,
+  `hzxm` varchar(20) DEFAULT NULL,
+  `hzsfzh` varchar(20) DEFAULT NULL,
+  `address` varchar(50) DEFAULT NULL,
+  `tel` varchar(20) DEFAULT NULL,
+  `gzdw` varchar(20) DEFAULT NULL,
+  `whcd` varchar(20) DEFAULT NULL,
+  `hyzk` varchar(20) DEFAULT NULL,
+  `mz` varchar(20) DEFAULT NULL,
+  `ssy` int(5) DEFAULT NULL,
+  `szy` int(5) DEFAULT NULL,
+  `kfxt` decimal(5,2) DEFAULT NULL,
+  `chxt` decimal(5,2) DEFAULT NULL,
+  `create_time` varchar(20) DEFAULT NULL,
+  `yan` varchar(20) DEFAULT NULL,
+  `height` varchar(20) DEFAULT NULL,
+  `weight` varchar(20) DEFAULT NULL,
+  `bmi` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`p_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `post` (
+  `post_id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(50) DEFAULT NULL,
+  `content` varchar(500) DEFAULT NULL,
+  `create_time` varchar(20) NOT NULL,
+  PRIMARY KEY (`post_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `power` (
+  `power_id` int(11) DEFAULT NULL,
+  `power_name` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `rank` (
+  `r_id` int(11) DEFAULT NULL,
+  `r_name` varchar(20) DEFAULT NULL,
+  `power` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `user` (
+  `u_id` int(11) NOT NULL AUTO_INCREMENT,
+  `zhanghao` varchar(20) NOT NULL,
+  `userName` varchar(20) NOT NULL,
+  `password` varchar(20) NOT NULL,
+  `create_time` varchar(20) NOT NULL,
+  `r_id` int(11) NOT NULL,
+  `cz` varchar(20) NOT NULL,
+  `power` varchar(20) NOT NULL,
+  PRIMARY KEY (`u_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+
+INSERT INTO `user` VALUES (1, 'admin', 'admin', 'admin', '2015-02-08', 3, 'quan', '5,6,7,8');
+INSERT INTO `user` VALUES (8, 'cun', 'cun', 'cun', '2015-02-10', 1, 'quan', '1,2,3,4,10,');
+INSERT INTO `user` VALUES (9, 'qu', 'qu', '000000', '2015-02-10', 2, 'quan', '2,4,9,11');
+INSERT INTO `user` VALUES (10, 'xiang', 'xiang', '000000', '2015-02-16', 4, 'quan', '2,4,9,11,12');
+
+INSERT INTO `rank` VALUES (1, '村用户', '1,2,3,4,10');
+INSERT INTO `rank` VALUES (2, '区市县用户', '2,4,9,11');
+INSERT INTO `rank` VALUES (3, '系统管理员', '5,6,7,8');
+INSERT INTO `rank` VALUES (4, '乡用户', '2,4,9,11,12');
+
+INSERT INTO `power` VALUES (1, '增删改个人健康档案');
+INSERT INTO `power` VALUES (2, '查询个人健康档案');
+INSERT INTO `power` VALUES (3, '增删改家庭档案');
+INSERT INTO `power` VALUES (4, '查询家庭档案');
+INSERT INTO `power` VALUES (5, '权限管理');
+INSERT INTO `power` VALUES (6, '帐号维护');
+INSERT INTO `power` VALUES (7, '公告管理');
+INSERT INTO `power` VALUES (8, '数据维护');
+INSERT INTO `power` VALUES (9, '查看慢病信息');
+INSERT INTO `power` VALUES (10, '管理患者信息');
+INSERT INTO `power` VALUES (11, '统计报表');
+INSERT INTO `power` VALUES (12, '干预措施');
+
+INSERT INTO `post` VALUES (5, '新年快乐！', '新年快乐！！', '2015-02-10');
+INSERT INTO `post` VALUES (6, '你好', '你好', '2015-02-10');
+
+INSERT INTO `person` VALUES (558, '旺旺', '男', '2014-12-29', '360113198912100033', '本地户籍常住', '户主', 'aa', '', '', '', '', '', '硕士以上', '未婚', '', 100, 100, 5.00, 5.00, '2015-02-16', '0', '156', '78', '32.05');
+INSERT INTO `person` VALUES (602, '丽丽', '女', '2015-02-01', '360123198712150088', '本地户籍常住', '户主', 'quan', '', '', '', '', '', '硕士以上', '未婚', '', 145, 145, 7.00, 7.00, '2015-02-16', '2', '167', '67', '24.02');
+INSERT INTO `person` VALUES (1191, '酷酷', '男', '2015-02-01', '360113198912100033', '本地户籍常住', '户主', 'quan', '', '', '', '', '', '硕士以上', '未婚', '', 120, 111, 5.00, 5.00, '2015-02-16', '12', '177', '65', '20.75');
+INSERT INTO `person` VALUES (1515, '刘梅', '女', '2015-02-19', '360113198812100033', '本地户籍常住', '户主', 'quan', '', '', '', '', '', '硕士以上', '未婚', '', 155, 155, 7.00, 7.00, '2015-02-16', '1', '156', '45', '18.49');
+INSERT INTO `person` VALUES (2478, '米米', '男', '2015-02-01', '360123198712140088', '本地户籍常住', '户主', 'quan', '', '', '', '', '', '硕士以上', '未婚', '', 131, 123, 5.00, 5.00, '2015-02-16', '0', '167', '56', '20.08');
+INSERT INTO `person` VALUES (4878, '紫衣', '女', '2014-07-28', '389022123923213333', '本地户籍常住', '户主', 'quan', '', '', '', '', '', '硕士以上', '未婚', '', 100, 100, 4.00, 4.00, '2015-02-16', '0', '156', '45', '18.49');
+INSERT INTO `person` VALUES (5186, '小明', '男', '2015-02-01', '389022123923213333', '本地户籍常住', '户主', 'aa', '', '', '', '', '', '硕士以上', '未婚', '', 145, 140, 7.00, 6.00, '2015-02-16', '22', '178', '56', '17.67');
+INSERT INTO `person` VALUES (6687, '天天', '男', '2014-12-28', '360113198812100033', '本地户籍常住', '户主', 'quan', '', '', '', '', '', '硕士以上', '未婚', '', 123, 112, 5.00, 6.00, '2015-02-16', '22', '178', '56', '17.67');
+INSERT INTO `person` VALUES (9550, '揉揉', '女', '2015-02-18', '389022123523213333', '本地户籍常住', '户主', 'quan', '', '', '', '', '', '硕士以上', '未婚', '', 156, 156, 8.00, 8.00, '2015-02-17', '', '166', '56', '20.32');
+
+INSERT INTO `manager` VALUES (30, 2478, '2015-02-16', '创建档案', ' ', '否', '2015-02-16', '收缩压：131  舒张压：123  空腹血糖：5.0  餐后血糖：5.0');
+INSERT INTO `manager` VALUES (31, 5186, '2015-02-16', '创建档案', ' ', '否', '2015-02-16', '收缩压：145  舒张压：140  空腹血糖：7.0  餐后血糖：6.0');
+INSERT INTO `manager` VALUES (32, 602, '2015-02-16', '创建档案', ' ', '否', '2015-02-16', '收缩压：145  舒张压：145  空腹血糖：7.0  餐后血糖：7.0');
+INSERT INTO `manager` VALUES (33, 6687, '2015-02-16', '创建档案', ' ', '否', '2015-02-16', '收缩压：123  舒张压：112  空腹血糖：5.0  餐后血糖：6.0');
+INSERT INTO `manager` VALUES (34, 558, '2015-02-16', '创建档案', ' ', '否', '2015-02-16', '收缩压：100  舒张压：100  空腹血糖：5.0  餐后血糖：5.0');
+INSERT INTO `manager` VALUES (35, 4878, '2015-02-16', '创建档案', ' ', '否', '2015-02-16', '收缩压：100  舒张压：100  空腹血糖：4.0  餐后血糖：4.0');
+INSERT INTO `manager` VALUES (36, 1191, '2015-02-16', '创建档案', ' ', '是', '2015-02-16', '收缩压：124  舒张压：111  空腹血糖：8.0  餐后血糖：8.0');
+INSERT INTO `manager` VALUES (37, 1515, '2015-02-16', '创建档案', ' ', '是', '2015-02-16', '收缩压：155  舒张压：155  空腹血糖：7.0  餐后血糖：7.0');
+INSERT INTO `manager` VALUES (38, 1515, '2015-02-10', '用药', '', '是', '2015-02-16', '本次收缩压135，舒张压124，空腹血糖7，空腹血糖7');
+INSERT INTO `manager` VALUES (39, 9550, '2015-02-17', '创建档案', ' ', '是', '2015-02-17', '收缩压：156  舒张压：156  空腹血糖：8.0  餐后血糖：8.0');
+INSERT INTO `manager` VALUES (40, 9550, '2015-03-07', '', '', '是', '2015-02-17', '');
+
+INSERT INTO `maintenance` VALUES (69, 8, '2015-02-16 15:12:12', '添加米米的个人健康档案');
+INSERT INTO `maintenance` VALUES (70, 8, '2015-02-16 15:13:43', '添加小明的个人健康档案');
+INSERT INTO `maintenance` VALUES (71, 8, '2015-02-16 15:33:37', '添加丽丽的个人健康档案');
+INSERT INTO `maintenance` VALUES (72, 8, '2015-02-16 15:34:36', '添加天天的个人健康档案');
+INSERT INTO `maintenance` VALUES (73, 8, '2015-02-16 15:35:33', '添加旺旺的个人健康档案');
+INSERT INTO `maintenance` VALUES (74, 8, '2015-02-16 15:41:27', '添加紫衣的个人健康档案');
+INSERT INTO `maintenance` VALUES (75, 8, '2015-02-16 15:42:28', '添加酷酷的个人健康档案');
+INSERT INTO `maintenance` VALUES (76, 8, '2015-02-16 15:43:55', '添加刘梅的个人健康档案');
+INSERT INTO `maintenance` VALUES (77, 8, '2015-02-16 15:45:14', '添加随访记录，时间：2015-02-10');
+INSERT INTO `maintenance` VALUES (78, 10, '2015-02-16 15:48:17', '为id为602的患者 添加干预建议：用药治疗');
+INSERT INTO `maintenance` VALUES (79, 8, '2015-02-17 10:46:49', '添加揉揉的个人健康档案');
+INSERT INTO `maintenance` VALUES (80, 8, '2015-02-17 10:47:11', '添加随访记录，时间：2015-03-07');
+
+INSERT INTO `gysuggest` VALUES (602, '用药治疗', '2015-02-16 15:48:17', 7);
+
+INSERT INTO `family` VALUES (15, '李明', '', '', '', 0, '1000元以下', '', '', '是', '2015-02-10');

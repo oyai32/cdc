@@ -1,0 +1,99 @@
+@CHARSET "UTF-8";
+
+body {
+	margin: 0px;
+	padding: 0px;
+	font-family: "微软雅黑";
+	background: #AFD3DE;
+}
+
+ul {
+	padding: 0px;
+	margin: 0px;
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: #215F8B;
+}
+
+a:HOVER {
+	color: orange;
+}
+.ltop:HOVER{
+	background: #eee;
+}
+.top {
+	border-bottom: 3px solid #215F8B;
+	height: 50px;
+	padding: 40px 0px;
+	background: #2989B4;
+	text-align: center;
+	color: white;
+	font-size: 30px;
+	font-weight: bold;
+	width: 980px;
+	margin: 0px auto;
+}
+
+.mi {
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	height: 590px;
+	width: 980px;
+	margin: 0px auto;
+	background: white;
+}
+
+.left {
+	border-right: 2px solid #ccc;
+	height: 530px;
+	float: left;
+	width: 230px;
+	padding-top: 60px;
+}
+
+.left li {
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;;
+	color: #215F8B;
+	padding:10px 0px;
+}
+
+.right {
+	float: left;
+	border: 0px solid green;
+	height: 590px;
+	width: 740px;
+}
+
+iframe {
+	border: 0px solid red;
+	width: 100%;
+	height: 100%;
+}
+
+.ti {
+	padding: 3px 0px 3px 20px;
+	width: 960px;
+	background: #ccc;
+	font-size: 12px;
+	margin: 0px auto;
+}
+
+.xl {
+	border: 1px solid red;
+}
+.ltop{
+	border-bottom:1px dashed #ccc;
+	padding:5px 0px;
+}
+.liex{
+	display:none;
+	font-weight:normal;
+	border:1px solid #eee;
+	padding-top:15px;
+	background:#eee;
+}

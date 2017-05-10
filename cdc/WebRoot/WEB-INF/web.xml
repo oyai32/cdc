@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <display-name></display-name>
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AddPerson</servlet-name>
+    <servlet-class>servlet.AddPerson</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AddFamily</servlet-name>
+    <servlet-class>servlet.AddFamily</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SelectPerson</servlet-name>
+    <servlet-class>servlet.SelectPerson</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SelectFamily</servlet-name>
+    <servlet-class>servlet.SelectFamily</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UserServlet</servlet-name>
+    <servlet-class>servlet.UserServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>BingServlet</servlet-name>
+    <servlet-class>servlet.BingServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AdminServlet</servlet-name>
+    <servlet-class>servlet.AdminServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CountServlet</servlet-name>
+    <servlet-class>servlet.CountServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/servlet/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddPerson</servlet-name>
+    <url-pattern>/servlet/AddPerson</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddFamily</servlet-name>
+    <url-pattern>/servlet/AddFamily</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SelectPerson</servlet-name>
+    <url-pattern>/servlet/SelectPerson</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SelectFamily</servlet-name>
+    <url-pattern>/servlet/SelectFamily</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserServlet</servlet-name>
+    <url-pattern>/servlet/UserServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>BingServlet</servlet-name>
+    <url-pattern>/servlet/BingServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdminServlet</servlet-name>
+    <url-pattern>/servlet/AdminServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CountServlet</servlet-name>
+    <url-pattern>/servlet/CountServlet</url-pattern>
+  </servlet-mapping>	
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

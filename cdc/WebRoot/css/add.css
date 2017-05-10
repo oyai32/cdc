@@ -1,0 +1,30 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	color:#464646;
+}
+
+.top {
+	border-bottom: 4px solid #2989B4;
+	padding: 20px 0px 10px 20px;
+	color:#215F8B;
+	margin-left:5px;
+	font-weight: bold;
+}
+
+.td2{
+		width:140px;
+		text-align: right;
+}
+
+#text{
+	font-size:12px;
+	padding:5px;
+	text-align:right;
+	color:red;
+	width:160px;
+	float:left;
+}
+.tdr{
+	text-align: right;
+}
