@@ -17,7 +17,7 @@ public class UserDao {
 	 * @return
 	 */
 	public boolean addUser(String zhanghao, String userName, int r_id, String cz) {
-		String sql = "select power from rank where r_id=?";// 查询默认权限
+		String sql = "select power from `rank` where r_id=?";// 查询默认权限
 		Map<String, Object> map = DBUtils.query(sql, r_id);
 		String power = map.get("power").toString();
 		sql = "insert into user(zhanghao,userName,password,create_time,r_id,cz,power)values(?,?,'000000',curdate(),?,?,?)";
@@ -45,7 +45,7 @@ public class UserDao {
 	 * @return
 	 */
 	public User idSelUser(int u_id) {
-		String sql = "select a.*,b.r_name from user a,rank b where u_id =? and a.r_id=b.r_id ";
+		String sql = "select a.*,b.r_name from user a,`rank` b where u_id =? and a.r_id=b.r_id ";
 		Map<String, Object> map = DBUtils.query(sql, u_id);
 		User u = new User();
 		if (map.get("u_id") != null) {
@@ -62,7 +62,7 @@ public class UserDao {
 	 */
 	public User login(String zhanghao, String password) {
 
-		String sql = "select a.*,b.r_name from user a,rank b where zhanghao =? and password=? and a.r_id=b.r_id";
+		String sql = "select a.*,b.r_name from user a,`rank` b where zhanghao =? and password=? and a.r_id=b.r_id";
 		Map<String, Object> map = DBUtils.query(sql, zhanghao, password);
 		User u = new User();
 		if (map.get("u_id") != null) {
@@ -112,7 +112,7 @@ public class UserDao {
 	 * @return
 	 */
 	public User zSelUser(String zhanghao) {
-		String sql = "select a.*,b.r_name  from user a,rank b  where zhanghao =? and a.r_id=b.r_id";
+		String sql = "select a.*,b.r_name  from user a,`rank` b  where zhanghao =? and a.r_id=b.r_id";
 		Map<String, Object> map = DBUtils.query(sql, zhanghao);
 		User u = new User();
 		if (map.get("u_id") != null) {
@@ -127,7 +127,7 @@ public class UserDao {
 	 * @return
 	 */
 	public User uSelUser(String userName) {
-		String sql = "select a.*,b.r_name  from user a,rank b  where userName =?  and a.r_id=b.r_id";
+		String sql = "select a.*,b.r_name  from user a,`rank` b  where userName =?  and a.r_id=b.r_id";
 		Map<String, Object> map = DBUtils.query(sql, userName);
 		User u = new User();
 		if (map.get("u_id") != null) {
@@ -187,7 +187,7 @@ public class UserDao {
 	 * @return
 	 */
 	public List<User> timeSelUser(String start, String end) {
-		String sql = "select a.*,b.r_name from user a,rank b where a.create_time between ? and ?  and b.r_id=a.r_id";
+		String sql = "select a.*,b.r_name from user a,`rank` b where a.create_time between ? and ?  and b.r_id=a.r_id";
 		List<Map<String, Object>> list = DBUtils.queryList(sql, start, end);
 		if (list != null) {
 			List<User> ulist = new ArrayList<User>();
@@ -208,7 +208,7 @@ public class UserDao {
 	 * @return
 	 */
 	public List<User> czSelUser(String cz) {
-		String sql = "select a.*,b.r_name from user a,rank b where a.cz=? and b.r_id=a.r_id";
+		String sql = "select a.*,b.r_name from user a,`rank` b where a.cz=? and b.r_id=a.r_id";
 		List<Map<String, Object>> list = DBUtils.queryList(sql, cz);
 		if (list != null) {
 			List<User> ulist = new ArrayList<User>();
